@@ -74,6 +74,7 @@ export const ServicesListScreen = () => {
         </View>
       ) : (
         <FlatList
+          className="flex-1"
           data={filteredServices}
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
