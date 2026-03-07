@@ -36,6 +36,22 @@ export const BookingScreen = () => {
       return;
     }
 
+    const isDuplicate = bookings.some(
+      (b) => b.serviceId === service.id && b.date === date && b.time === time,
+    );
+
+    if (isDuplicate) {
+      if (Platform.OS === "web") {
+        window.alert("A booking with these details already exists.");
+      } else {
+        Alert.alert(
+          "Duplicate Booking",
+          "You already have a booking for this service at this date and time.",
+        );
+      }
+      return;
+    }
+
     const newBooking: Booking = {
       id: Date.now().toString(),
       serviceId: service.id,

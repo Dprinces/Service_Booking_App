@@ -62,7 +62,7 @@ export const ServicesListScreen = () => {
       <View className="mb-4">
         <TextInput
           className="bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm text-base"
-          placeholder="🔍 Search services..."
+          placeholder="Search services..."
           value={search}
           onChangeText={setSearch}
         />
